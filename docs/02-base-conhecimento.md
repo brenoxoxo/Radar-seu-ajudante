@@ -2,17 +2,12 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Para que serve no Radar? |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `historico_atendimento.csv` | CSV | Para que serve no Radar?Contextualizar o histórico de transações e interações para mapear a evolução dos hábitos financeiros e manter a consistência do acompanhamento proativo. |
+| `perfil_investidor.json` | JSON | Personalizar as intervenções e ajustar o tom de voz (de conselheiro empático a treinador firme) com base na gravidade do desvio estatístico. |
+| `produtos_financeiros.json` | JSON | Conhecer os gatilhos comportamentais do usuário, identificando de forma precisa os horários, dias da semana e categorias com maior risco de impulsividade. |
+| `transacoes.csv` | CSV | Analisar os padrões de microtransações e médias móveis em tempo real para prever anomalias e alertar o usuário antes que o orçamento seja estourado. |
 
 ---
 
@@ -20,7 +15,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+Os dados mockados originais foram reestruturados para focar em finanças comportamentais em vez de apenas rentabilidade.
 
 ---
 
@@ -29,12 +24,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os arquivos JSON e CSV são consumidos pelo backend (em Python ou Node.js) no momento do login do usuário para construir o estado inicial.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Os dados estáticos e de personalidade (perfil do investidor, gatilhos e catálogo de produtos) são fixados no System Prompt para definir as restrições e o estilo de resposta da IA.
 
 ---
 
@@ -43,13 +38,18 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
+[System Context - Regras do Radar]
 Dados do Cliente:
 - Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Perfil: Impulsivo
+- Renda Mensal: R$ 5.000,00
+- Gatilho Mapeado: Compras noturnas e delivery aos finais de semana
+- Objetivo Ativo: Completar reserva de emergência sem desvios
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+[Dynamic Input - Gatilho de Avaliação]
+Transações Críticas nas últimas 48h:
+- 02/09: iFood Burger (R$ 89,90) - alimentacao_impulsiva
+- 03/09: iFood Pizza (R$ 112,50) - alimentacao_impulsiva
+Status Atual: Usuário abrindo aplicativo de delivery no sábado à noite.
+Ação Requerida da IA: Intervir imediatamente. Assumir tom de "Treinador Firme" e sugerir transferência para o "Cofre Virtual Programado"
 ```
