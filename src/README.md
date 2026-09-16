@@ -12,7 +12,7 @@ Radar-seu-ajudante/
 │   ├── perfil_investidor.json
 │   └── produtos_financeiros.json
 └── src/
-    ├── app.py
+    └── app.py
 ```
 
 ## Como rodar
