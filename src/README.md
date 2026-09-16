@@ -155,15 +155,15 @@ with st.sidebar:
     st.write(f"**Gatilho:** {perfil['gatilho_comportamental']}")
 
     st.divider()
-    
+
     # Progresso da Reserva de Emergência
     reserva_atual = perfil['reserva_emergencia_atual']
     meta_reserva = perfil['metas'][0]['valor_necessario']
     progresso = min(reserva_atual / meta_reserva, 1.0)
-    
+
     st.subheader("🎯 Reserva de Emergência")
     st.progress(progresso, text=f"R$ {reserva_atual:,.2f} de R$ {meta_reserva:,.2f} ({int(progresso*100)}%)")
-    
+
     st.divider()
     if st.button("🗑️ Reiniciar Conversa", use_container_width=True):
         st.session_state.messages = []
@@ -220,7 +220,7 @@ if pergunta_final:
     # 2. Gerar e exibir resposta em streaming
     with st.chat_message("assistant"):
         resposta_completa = st.write_stream(stream_resposta(pergunta_final, st.session_state.messages[:-1]))
-    
+
     # 3. Salvar resposta no histórico
     st.session_state.messages.append({"role": "assistant", "content": resposta_completa})
     st.rerun()
