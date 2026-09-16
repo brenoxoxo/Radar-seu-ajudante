@@ -77,9 +77,31 @@ Pitch de 3 minutos com o agente em funcionamento: **[streamable.com/1669xt](http
 │   ├── 04-metricas.md             # Avaliação e resultados dos testes
 │   └── 05-pitch.md                # Roteiro e link do pitch
 ├── data/                          # Dados mockados que alimentam o Radar
-├── src/                           # Estrutura de referência para a aplicação
+├── src/
+│   └── app.py                     # Aplicação Streamlit + Ollama (código do Radar)
 └── assets/                        # Roteiro original do desafio
 ```
+
+## 🚀 Como executar
+
+O Radar é um chat em **Streamlit** que roda o modelo **Llama 3.1 localmente via Ollama**, usando os dados de `data/` como contexto de cada resposta.
+
+```bash
+# 1. Instale as dependências
+pip install streamlit pandas requests
+
+# 2. Baixe e rode o modelo via Ollama
+ollama run llama3.1
+
+# 3. Inicie a aplicação
+streamlit run src/app.py
+```
+
+**O que a interface oferece:**
+- Painel lateral com o perfil do cliente e progresso da reserva de emergência
+- Chat contínuo com streaming de resposta (word-by-word)
+- Sugestões rápidas de perguntas (chips)
+- Contexto do cliente (perfil, transações, histórico e produtos) montado automaticamente a partir dos arquivos em `data/` e injetado no *system prompt* a cada interação
 
 ## 📚 Documentação completa
 
