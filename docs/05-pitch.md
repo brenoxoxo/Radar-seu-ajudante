@@ -8,32 +8,32 @@
 ### 1. O Problema (30 seg)
 > Qual dor do cliente você resolve?
 
-[Sua descrição aqui]
+os gastos impulsivos
 
 ### 2. A Solução (1 min)
 > Como seu agente resolve esse problema?
 
-[Sua descrição aqui]
+sendo direto e bem explicativo
 
 ### 3. Demonstração (1 min)
 > Mostre o agente funcionando (pode ser gravação de tela)
 
-[Descreva o que será mostrado]
+https://streamable.com/1669xt está é uma gravação do agente funcionando.
 
 ### 4. Diferencial e Impacto (30 seg)
 > Por que essa solução é inovadora e qual é o impacto dela na sociedade?
 
-[Sua descrição aqui]
+ele reconhece o perfil da pessoa e esclarece onde ela deve mudar os hábitos.
 
 ---
 
 ## Checklist do Pitch
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+- [X] Duração máxima de 3 minutos
+- [X] Problema claramente definido
+- [X] Solução demonstrada na prática
+- [X] Diferencial explicado
+- [X] Áudio e vídeo com boa qualidade
 
 ---
 
@@ -41,4 +41,4 @@
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+https://streamable.com/1669xt
