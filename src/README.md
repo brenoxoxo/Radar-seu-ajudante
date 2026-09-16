@@ -13,7 +13,6 @@ Radar-seu-ajudante/
 │   └── produtos_financeiros.json
 └── src/
     ├── app.py
-    └── requirements.txt
 ```
 
 ## Como rodar
